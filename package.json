@@ -1,0 +1,16 @@
+{
+  "name": "welcome-page",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "postcss --use autoprefixer --output css/style.css css/style.css",
+    "watch": "node-sass --watch --output-style compressed css/style.scss css/style.css"
+  },
+  "author": "mentos1386",
+  "license": "GPL3",
+  "devDependencies": {
+    "autoprefixer": "^6.3.3",
+    "node-sass": "^3.4.2",
+    "postcss-cli": "^2.5.1"
+  }
+}
