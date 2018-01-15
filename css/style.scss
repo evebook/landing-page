@@ -1,6 +1,11 @@
 @import "normalize.css";
 @import "roboto-font/roboto-fontface.scss";
 
+$grey: #161d26;
+$red: #F44336;
+
+$sub-header-size: 3em;
+$mobile-break: 768px;
 
 body {
   background: #111;
@@ -16,6 +21,32 @@ body {
   font-weight: 300;
 }
 
+/**
+ * WARNING
+ */
+.warning {
+  position: absolute;
+  top: 55px;
+  margin-top: 3em;
+  width: 80%;
+  background: #FF5722;
+  color: $grey;
+  align-self: center;
+  font-weight: 500;
+
+  p {
+    margin: 1em;
+  }
+
+  @media only screen and (max-width: $mobile-break) {
+    width: 100%;
+  }
+
+}
+
+/**
+ * NAVBAR
+ */
 nav {
   display: flex;
   flex-direction: row;
@@ -23,6 +54,10 @@ nav {
   padding: 1em;
   margin: 0.5em 10%;
   justify-content: space-between;
+
+  @media only screen and (max-width: $mobile-break) {
+    margin: 0.5em 0;
+  }
 
   * {
     align-self: center;
@@ -44,11 +79,14 @@ nav {
     }
 
     .alpha {
-      color: #F44336;
+      color: $red;
     }
   }
 
   .links {
+    display: flex;
+    flex-direction: row;
+
     a {
       font-size: 1.25em;
       color: #f3f3f3;
@@ -66,7 +104,15 @@ nav {
   }
 }
 
+/**
+ * CONTENT
+ */
 .content {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+
   > * {
     margin: 3.5em 0 0;
   }
@@ -74,6 +120,18 @@ nav {
     margin: 3.5em 0 7em;
   }
 
+  .full-height {
+    height: 100vh;
+
+    &:first-child {
+      height: calc(100vh - 55px);
+      margin-top: 0;
+    }
+  }
+
+  /**
+   * HERO
+   */
   .hero {
     display: flex;
     flex-direction: column;
@@ -84,37 +142,121 @@ nav {
       margin: 0;
     }
 
+    small {
+      font-size: 0.4em;
+      align-self: flex-end;
+
+      @media only screen and (max-width: $mobile-break) {
+        align-self: center;
+      }
+
+      &.alpha {
+        color: $red;
+      }
+    }
+
     .header {
+      display: flex;
+      flex-direction: row;
       font-weight: 200;
       font-size: 5em;
+
+      @media only screen and (max-width: $mobile-break) {
+        flex-direction: column;
+      }
     }
     .sub-header {
       margin-top: 1em;
       font-weight: 200;
-      font-size: 3em;
+      font-size: $sub-header-size;
+      text-align: center;
     }
   }
 
+  /**
+   * TEXT
+   */
   .text {
     display: flex;
     flex-direction: column;
     font-size: 1.2em;
 
+    .text-header {
+      font-size: $sub-header-size;
+      font-weight: 200;
+      align-self: center;
+    }
+
     .text-wrap {
       display: flex;
       flex-direction: column;
       align-self: center;
-      background: #161d26;
+      background: $grey;
       max-width: 70%;
       padding: 1em 2em;
+
+      @media only screen and (max-width: $mobile-break) {
+        max-width: 100%;
+      }
+
+    }
+  }
+
+  /**
+   * FEATURE
+   */
+  .feature {
+    margin-left: 30%;
+
+    @media only screen and (max-width: $mobile-break) {
+      display: flex;
+      flex-direction: row;
+      margin-left: 15%;
+
+      .feature-wrap {
+        max-width: 80%;
+        align-self: center;
+
+        .feature-text {
+          max-width: 100%;
+        }
+      }
+    }
+
+    .feature-wrap {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .feature-text,
+    .feature-icon {
+      display: inline-block;
+      align-self: center;
+    }
+
+    .feature-text {
+      font-size: 1.5em;
+      margin: 0 0 0 1em;
+      text-shadow: 0 0 1em #000;
+      max-width: 35%;
+    }
+
+    .feature-icon {
+      padding: 1em;
+      font-size: 2em;
+      border-radius: 50%;
+      background: $grey;
     }
   }
 }
 
+/**
+ * FOOTER
+ */
 footer {
   display: flex;
   flex-direction: column;
-  background: #161d26;
+  background: $grey;
   padding: 2em 2em 1em;
 
   > * {
