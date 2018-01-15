@@ -1,10 +1,10 @@
 <h1 align="center">
-  EVE Book Welcome Page
+  EVE Book Landing Page
 </h1>
 
 <h3 align="center">Hub for EVE Online community.</h3>
 
-###### What is this?
+##### What is this?
 Simple landing page, until we release beta (release?) version.
 
 
